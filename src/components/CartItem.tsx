@@ -8,10 +8,13 @@ interface CartItemProps {
 
 const CartItem: React.FC<CartItemProps> = ({ product, amount }) => {
   return (
-    <div className="flex justify-between items-center">
-      <div>{product.name}</div>
-      <div>{product.price}</div>
-      <div className="flex justify-center">Amount: {amount}</div>
+    <div className="flex justify-between items-center whitespace-nowrap">
+      <h3 className="flex-1">{product.name}</h3>
+      <span className="flex-1 text-sm text-end">{product.price}</span>
+      <span className="flex-1 text-sm text-end">{amount} db</span>
+      <span className="flex-1 text-sm text-end">
+        {product.price * amount} Ft
+      </span>
     </div>
   );
 };
